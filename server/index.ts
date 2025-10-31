@@ -1,3 +1,7 @@
 import { forgeRouter } from '@functions/routes'
 
-export default forgeRouter({})
+import venueRoutes from './routes/venues'
+
+export default forgeRouter({
+  venues: venueRoutes
+})

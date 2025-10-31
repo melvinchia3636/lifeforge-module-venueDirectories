@@ -7,5 +7,6 @@ export default {
   routes: {
     'venue-directories': lazy(() => import('@'))
   },
-  category: 'Lifestyle'
+  category: 'Lifestyle',
+  requiredAPIKeys: ['gcloud']
 } satisfies ModuleConfig

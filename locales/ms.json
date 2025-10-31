@@ -1,4 +1,17 @@
 {
   "title": "Direktori Venue",
-  "description": "Lihat direktori tempat dan navigasi antara lokasi dengan peta interaktif."
+  "description": "Lihat direktori tempat dan navigasi antara lokasi dengan peta interaktif.",
+  "items": {
+    "venue": "Venue"
+  },
+  "modals": {
+    "venue": {
+      "create": "Cipta Venue",
+      "update": "Kemas Kini Venue"
+    }
+  },
+  "inputs": {
+    "venueLocation": "Lokasi Venue",
+    "venueIcon": "Ikon Venue"
+  }
 }

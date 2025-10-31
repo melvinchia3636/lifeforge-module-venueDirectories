@@ -1,4 +1,17 @@
 {
   "title": "場館目錄",
-  "description": "瀏覽場館目錄，並透過互動地圖在地點之間導航。"
+  "description": "瀏覽場館目錄，並透過互動地圖在地點之間導航。",
+  "items": {
+    "venue": "場館"
+  },
+  "modals": {
+    "venue": {
+      "create": "建立場館",
+      "update": "更新場地"
+    }
+  },
+  "inputs": {
+    "venueLocation": "場地位置",
+    "venueIcon": "場地圖示"
+  }
 }

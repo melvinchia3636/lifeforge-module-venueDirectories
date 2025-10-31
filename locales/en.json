@@ -1,4 +1,17 @@
 {
   "title": "Venue Directories",
-  "description": "Browse venue directories and navigate between locations with interactive maps."
+  "description": "Browse venue directories and navigate between locations with interactive maps.",
+  "items": {
+    "venue": "Venue"
+  },
+  "modals": {
+    "venue": {
+      "create": "Create Venue",
+      "update": "Update Venue"
+    }
+  },
+  "inputs": {
+    "venueLocation": "Venue Location",
+    "venueIcon": "Venue Icon"
+  }
 }

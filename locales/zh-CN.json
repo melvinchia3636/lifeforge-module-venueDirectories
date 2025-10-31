@@ -1,4 +1,17 @@
 {
   "title": "场馆目录",
-  "description": "浏览场馆目录，并通过互动地图在地点之间导航。"
+  "description": "浏览场馆目录，并通过互动地图在地点之间导航。",
+  "items": {
+    "venue": "场馆"
+  },
+  "modals": {
+    "venue": {
+      "create": "创建场馆",
+      "update": "更新场地"
+    }
+  },
+  "inputs": {
+    "venueLocation": "场地位置",
+    "venueIcon": "场地图标"
+  }
 }
