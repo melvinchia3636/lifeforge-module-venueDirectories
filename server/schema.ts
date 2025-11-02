@@ -86,7 +86,7 @@ const venueDirectoriesSchemas = {
           protected: false,
           required: false,
           system: false,
-          thumbs: ['96x0'],
+          thumbs: ['256x0'],
           type: 'file'
         }
       ],
