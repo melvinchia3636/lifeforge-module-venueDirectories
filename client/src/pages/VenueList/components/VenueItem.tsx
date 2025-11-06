@@ -9,6 +9,7 @@ import {
   useModalStore
 } from 'lifeforge-ui'
 import { toast } from 'react-toastify'
+import { Link } from 'shared'
 
 import ModifyVenueModal from './ModifyVenueModal'
 
@@ -51,7 +52,7 @@ function VenueItem({ venue }: { venue: Venue }) {
   }
 
   return (
-    <ItemWrapper key={venue.id} className="group">
+    <ItemWrapper key={venue.id} isInteractive className="group relative">
       <img
         alt={venue.name}
         className="component-bg-lighter mb-4 aspect-square w-full rounded-md object-contain p-4"
@@ -66,6 +67,7 @@ function VenueItem({ venue }: { venue: Venue }) {
       />
       <h3 className="mb-2 truncate text-lg font-medium">{venue.name}</h3>
       <p className="text-bg-500 text-sm">{venue.address}</p>
+      <Link className="absolute inset-0" to={`./${venue.id}`} />
       <ContextMenu
         classNames={{
           wrapper:

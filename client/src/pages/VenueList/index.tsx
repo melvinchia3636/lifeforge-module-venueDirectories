@@ -1,3 +1,4 @@
+import forgeAPI from '@/utils/forgeAPI'
 import { useQuery } from '@tanstack/react-query'
 import { useDebounce } from '@uidotdev/usehooks'
 import {
@@ -13,7 +14,6 @@ import type { InferOutput } from 'shared'
 
 import ModifyVenueModal from './components/ModifyVenueModal'
 import VenueItem from './components/VenueItem'
-import forgeAPI from './utils/forgeAPI'
 
 export type Venue = InferOutput<typeof forgeAPI.venueDirectories.venues.list>[0]
 
@@ -60,9 +60,15 @@ function VenueDirectories() {
       <WithQuery query={venuesQuery}>
         {venues => (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {venues.map(venue => (
-              <VenueItem key={venue.id} venue={venue} />
-            ))}
+            {venues
+              .filter(v =>
+                v.name
+                  .toLowerCase()
+                  .includes(debouncedSearchQuery.toLowerCase())
+              )
+              .map(venue => (
+                <VenueItem key={venue.id} venue={venue} />
+              ))}
           </div>
         )}
       </WithQuery>

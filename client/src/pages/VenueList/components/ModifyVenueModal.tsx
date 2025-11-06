@@ -96,7 +96,6 @@ function ModifyVenueModal({
       }
     })
     .onSubmit(async values => {
-      console.log(values)
       await mutation.mutateAsync(values)
     })
     .build()

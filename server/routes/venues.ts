@@ -11,6 +11,38 @@ const list = forgeController
     pb.getFullList.collection('venue_directories__venues').execute()
   )
 
+const getById = forgeController
+  .query()
+  .description('Get a venue by ID')
+  .input({
+    query: z.object({
+      id: z.string()
+    })
+  })
+  .existenceCheck('query', {
+    id: 'venue_directories__venues'
+  })
+  .callback(({ pb, query: { id } }) =>
+    pb.getOne.collection('venue_directories__venues').id(id).execute()
+  )
+
+const validate = forgeController
+  .query()
+  .description('Validate whether a venue exists by ID')
+  .input({
+    query: z.object({
+      id: z.string()
+    })
+  })
+  .callback(
+    async ({ pb, query: { id } }) =>
+      !!(await pb.getOne
+        .collection('venue_directories__venues')
+        .id(id)
+        .execute()
+        .catch(() => null))
+  )
+
 const create = forgeController
   .mutation()
   .description('Create a new venue')
@@ -96,6 +128,8 @@ const remove = forgeController
 
 export default forgeRouter({
   list,
+  getById,
+  validate,
   create,
   update,
   remove
