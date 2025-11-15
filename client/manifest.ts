@@ -5,8 +5,8 @@ export default {
   name: 'Venue Directories',
   icon: 'tabler:map',
   routes: {
-    'venue-directories': lazy(() => import('@/pages/VenueList')),
-    'venue-directories/:id': lazy(() => import('@/pages/Venue'))
+    '/': lazy(() => import('@/pages/VenueList')),
+    '/:id': lazy(() => import('@/pages/Venue'))
   },
   category: 'Lifestyle',
   requiredAPIKeys: ['gcloud']
